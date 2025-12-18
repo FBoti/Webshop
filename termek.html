@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utánfutó Webshop - Termékek</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-trailer"></i>
+                <h1>Után<span>futó</span>Shop</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Főoldal</a></li>
+                    <li><a href="termek.html" class="nav-link active">Termékek</a></li>
+                    <li><a href="kapcsolat.html" class="nav-link">Kapcsolat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="products-page">
+            <div class="products-header">
+                <h2 class="page-title">Termékeink</h2>
+                <button id="add-product-btn" class="btn">
+                    <i class="fas fa-plus"></i> Új termék hozzáadása
+                </button>
+            </div>
+            
+            <div id="products-container" class="products-grid">
+            </div>
+        </section>
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Új termék hozzáadása</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Termék neve</label>
+                    <input type="text" id="product-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-description">Termék leírása</label>
+                    <textarea id="product-description" class="form-control" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-price">Ár (Ft)</label>
+                    <input type="number" id="product-price" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Kép ikon</label>
+                    <div class="icon-picker" id="icon-picker">
+                        <button type="button" class="icon-choice active" data-image="utanfuto.jpg" data-icon="fas fa-trailer"><i class="fas fa-trailer"></i></button>
+                        <button type="button" class="icon-choice" data-image="utanfuto2.jpg" data-icon="fas fa-truck"><i class="fas fa-truck"></i></button>
+                        <button type="button" class="icon-choice" data-image="utanfuto3.jpg" data-icon="fas fa-caravan"><i class="fas fa-caravan"></i></button>
+                        <button type="button" class="icon-choice" data-image="utanfuto4.jpg" data-icon="fas fa-ship"><i class="fas fa-ship"></i></button>
+                    </div>
+                    <input type="hidden" id="product-image" value="utanfuto.jpg" required>
+                    <input type="hidden" id="product-icon" value="fas fa-trailer">
+                    <small>Válasszon ikont a listából</small>
+                </div>
+                
+                <input type="hidden" id="product-id">
+                
+                <div style="display: flex; gap: 10px; margin-top: 2rem;">
+                    <button type="submit" class="btn" style="flex: 1;">Mentés</button>
+                    <button type="button" class="btn btn-delete" id="delete-product-btn" style="flex: 1; display: none;">Törlés</button>
+                    <button type="button" class="btn close-modal" style="color: white; background-color: var(--gray); flex: 1;">Mégse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2023 UtánfutóShop. Minden jog fenntartva.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>Ez egy példa webshop, kizárólag oktatási célokra készült.</p>
+        </div>
+    </footer>
+    <script src="./termek.js"></script>
+</body>
+</html>
